@@ -9,16 +9,38 @@
         <div class="centered-form">
             <div class="centered-form__box">
                 <h1>Join</h1>
-                <form action="/chat.html">
+                <form id="joinForm">
                     <label>Display Name</label>
-                    <input type="text" name="username" placeholder="Display name" required>
+                    <input type="text" id="usernameInput" name="username" placeholder="Display name" required>
                     <label>Room</label>
-                    <input type="text" name="room" placeholder="Room" required>
-                    <button>Join</button>
+                    <input type="text" id="roomInput" name="room" placeholder="Room" required>
+                    <button type="submit">Join</button>
                 </form>
-
             </div>
-
         </div>
+
+        <script src="/path/to/socket.io.js"></script>
+        <script>
+            const socket = io();  // Connect to the Socket.io server
+
+            document.getElementById('joinForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const username = document.getElementById('usernameInput').value;
+                const room = document.getElementById('roomInput').value;
+
+                socket.emit('join', { username, room }, (error) => {
+                    if (error) {
+                        alert(error);
+                    } else {
+                        // Clear input fields after successful join
+                        document.getElementById('usernameInput').value = '';
+                        document.getElementById('roomInput').value = '';
+                        // Redirect to the chat.html page or handle navigation as needed
+                        window.location.href = '/chat.html';
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
