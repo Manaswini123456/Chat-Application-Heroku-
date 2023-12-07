@@ -1,6 +1,6 @@
 Certainly! Here's the complete content for your README file:
 
-```markdown
+
 # Chat Application with Socket.io and Express
 
 This is a simple chat application built using Socket.io and Express. It allows users to join different chat rooms, send messages, and share their locations.
@@ -17,29 +17,29 @@ These instructions will help you set up and run the chat application on your loc
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your-username/your-chat-app.git
-   ```
+  
+   https://github.com/Manaswini123456/Chat-Application-Heroku-.git
+  
 
 2. Navigate to the project directory:
 
-   ```bash
+  
    cd your-chat-app
-   ```
+   
 
 3. Install dependencies:
 
-   ```bash
+   
    npm install
-   ```
+  
 
 ### Running the Application
 
 1. Start the server:
 
-   ```bash
+   
    npm start
-   ```
+   
 
 2. Open your browser and go to [http://localhost:3000](http://localhost:3000).
 
